@@ -33,24 +33,24 @@
     <div class="wrapper">
 
         @include('layout.back.navbar')
-        <div class="content-wrapper"> 
-        @include('layout.back.sidebar')
-        
-        <div class="card card-primary">
+        <div class="content-wrapper">
+            @include('layout.back.sidebar')
+
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">VIEW CATEGORY</h3>
                 </div>
- 
+
                 <div class="row">
                     <div class="col-8">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">LIST CATEGORY</h3>
- 
+
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
                                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
- 
+
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                                         </div>
@@ -61,24 +61,39 @@
                             <div class="card-body table-responsive p-0" style="height: 600px;">
                                 <table class="table table-head-fixed text-nowrap">
                                     <thead>
-                                        
+
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        <th>Category_Id</th>
-                                        <th>Category_name</th>
-                                        <th>Action</th>
-                                    </tr>
+                                            <th>Category_Id</th>
+                                            <th>Category_name</th>
+                                            <th>Action</th>
+                                        </tr>
                                         @foreach($categories as $category)
                                         <tr>
                                             <td>{{ $category->id}}</td>
                                             <td>{{ $category->name}}</td>
-                                            <td><button type="button" class="btn btn-success">Edit</button></td>
-                                            <td><button type="button" class="btn btn-danger">Delete</button></td>
+                                            <td>
+                                                <a class="btn btn-primary btn-sm" href="#">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    View
+                                                </a>
+                                            <a class="btn btn-info btn-sm" href="#">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Edit
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="#">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Delete
+                                            </a>
+                                            </td>
                                         </tr>
                                         @endforeach
- 
- 
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -88,32 +103,32 @@
                     </div>
                 </div>
             </div>
-            </div>
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
- 
- 
- 
- 
- 
- 
- 
-                </div><!-- /.container-fluid -->
-                </div>
-            </section>
-            <!-- /.content -->
-        
+        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
 
 
-        @include('layout.back.footer')
 
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+
+
+
+            </div><!-- /.container-fluid -->
+    </div>
+    </section>
+    <!-- /.content -->
+
+
+
+    @include('layout.back.footer')
+
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
