@@ -23,7 +23,8 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('admin.dashboard.add.add_category');
+        $data['categories'] =  Category::orderBy('name')->get();
+        return view('admin.dashboard.add.add_category')->with($data);
     }
     
     public function store(Request $request)
@@ -34,7 +35,7 @@ class CategoryController extends Controller
   
         Category::create($request->all());
         return redirect()->route('category.create')
-                        ->with('success','Blog created successfully.');
+                        ->with('success','Category created successfully.');
     }
 
     public function show($id)

@@ -35,7 +35,26 @@
         @include('layout.back.navbar')
         @include('layout.back.sidebar')
         <div class="content-wrapper">
-            @include('layout.back.navlink')
+
+
+
+            <!-- /.header link -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Dashboard</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.header link -->
 
             <div class="card card-primary">
                 <div class="card-header">
@@ -43,16 +62,29 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form">
+                <form action="{{ route('restaurant.store') }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                    @method('post') @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Restaurant Name </label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Restaurant Name">
+                            <span class="badge badge-success" style="float: right">{{ Session::get('success') }}</span>
+                            <input class="form-control" name="name" id="name" type="text" placeholder="Enter Restaurant Name" required="required" data-validation-required-message="Please enter Restaurant Name.">
+                            <p class="help-block text-danger"></p>
+                            @if ($errors->has('name'))
+                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span> @endif
+
                         </div>
 
                         <div class="form-group">
                             <label>Location</label>
-                            <textarea class="form-control" rows="3" placeholder="Enter Location "></textarea>
+                            <textarea class="form-control" name="address" id="address" type="text" placeholder="Enter Address" required="required" data-validation-required-message="Please enter Address."></textarea>
+                            <p class="help-block text-danger"></p>
+                            @if ($errors->has('type'))
+                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ $errors->first('type') }}</strong>
+                            </span> @endif
                         </div>
 
                     </div>
