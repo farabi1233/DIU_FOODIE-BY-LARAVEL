@@ -29,7 +29,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dashboard.add.add_restaurant');
     }
 
     /**

@@ -28,7 +28,13 @@ class CategoryController extends Controller
     
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'name' => 'required',
+        ]);
+  
+        Category::create($request->all());
+        return redirect()->route('category.create')
+                        ->with('success','Blog created successfully.');
     }
 
     public function show($id)

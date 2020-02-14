@@ -29,7 +29,7 @@ class MealController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dashboard.add.add_meal');
     }
 
     /**

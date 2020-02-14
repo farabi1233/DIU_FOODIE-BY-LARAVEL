@@ -52,25 +52,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="http://127.0.0.1:8000/dashboard/category/create" class="nav-link">
+                  <a href="{{route('category.create')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Category</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
+                  <a href="{{route('restaurant.create')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Restaurant</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
+                  <a href="{{route('meal.create')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Meal </p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
+                  <a href="{{route('food.create')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Food </p>
                   </a>
@@ -89,25 +89,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="http://127.0.0.1:8000/dashboard/category" class="nav-link">
+                  <a href="{{route('category.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Category</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="http://127.0.0.1:8000/dashboard/restaurant" class="nav-link">
+                  <a href="{{route('restaurant.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Restaurant</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="http://127.0.0.1:8000/dashboard/meal" class="nav-link">
+                  <a href="{{route('meal.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Meal </p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="http://127.0.0.1:8000/dashboard/food" class="nav-link">
+                  <a href="{{route('food.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Food </p>
                   </a>
