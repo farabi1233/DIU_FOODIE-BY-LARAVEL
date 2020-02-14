@@ -13,7 +13,7 @@ Route::resource('dashboard/restaurant', 'Admin\RestaurantController');
 
 
 Route::resource('/', 'User\UserController');
-Route::resource('dashboard/food', 'Admin\FoodController');
+
 
 
 

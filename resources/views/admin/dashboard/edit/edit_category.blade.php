@@ -33,109 +33,61 @@
     <div class="wrapper">
 
         @include('layout.back.navbar')
+        @include('layout.back.sidebar')
         <div class="content-wrapper">
-            @include('layout.back.sidebar')
+
+
+
+            <!-- /.header link -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Dashboard</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.header link -->
+
+
+
+
 
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">VIEW CATEGORY</h3>
+                    <h3 class="card-title">ADD CATEGORY</h3>
                 </div>
-
-                <div class="row">
-                    <div class="col-8">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">LIST CATEGORY</h3>
-
-                                <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;">
-                                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0" style="height: 600px;">
-                                <table class="table table-head-fixed text-nowrap">
-                                    <thead>
-
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>Category_Id</th>
-                                            <th>Category_name</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        @foreach($categories as $category)
-                                        <tr>
-                                            <td>{{ $category->id}}</td>
-                                            <td>{{ $category->name}}</td>
-                                            <td>
-                                            <a class="btn btn-primary " href="{{ route('category.show', $category->id) }}">  
-                                                    View</a>
-
-
-                                                <a class="btn btn-success " href="{{ route('category.edit', $category->id) }}">  
-                                                    Edit</a>
-                                                
-
-                                                <form action="{{ route('category.destroy', $category->id) }}" method="POST" style="display: inline-block;">
-                                                @csrf
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button type="submit" class="btn btn-outline-danger"onclick="return confirm('Are you sure want to delete this post?');"><i class="glyphicon glyphicon-trash"></i>
-                                                <i class="fas fa-trash">
-                                                </i>
-                                                Delete
-        
-    
-                                        </button>
-                                        </form>
+                <!-- /.card-header -->
 
 
 
-
-                                                
-
-
-
-
-
-
-
-
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                       
-
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
-
-
-                    <div class="col-md-4 col-md-offset-4">
-                        <div class="card" style="width: 29rem;">
+                <!-- form start -->
+               <form action="{{ route('category.update',$category->id) }}" method="post">
+               @csrf
+    <input type="hidden" name="_method" value="PATCH">
+   
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Category Name</label>
+                            <input class="form-control" name="name" id="name" type="text" value="{{ $category->name }}"  >
+                            <p class="help-block text-danger"></p>
                             
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
                         </div>
 
-
-
                     </div>
+                    <!-- /.card-body -->
 
-                </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
             </div>
             <!-- Main content -->
             <section class="content">
@@ -148,10 +100,9 @@
 
 
                 </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
-        </section>
-        <!-- /.content -->
-
 
 
         @include('layout.back.footer')

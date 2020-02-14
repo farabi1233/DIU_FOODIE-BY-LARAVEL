@@ -34,7 +34,21 @@ class FoodController extends Controller
     
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            
+            'category_id' => 'required',
+            'restaurant_id' => 'required',
+            'meal_id' => 'required',
+        ]);
+        
+
+        Food::create($request->all());
+        return redirect()->route('food.create')
+            ->with('success', 'Blog created successfully.');
     }
 
     
