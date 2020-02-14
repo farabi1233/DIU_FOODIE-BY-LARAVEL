@@ -20,6 +20,10 @@ class MealController extends Controller
             'meals' => Meal::all()
         ];
         return view('admin.dashboard.view.view_meal')->with($data);
+
+
+        $meals = Meal::orderBy('id','DESC')->paginate(5);
+        return view('admin.dashboard.view.view_meal', ['meals' => $meals]);
     }
 
    
@@ -49,19 +53,27 @@ class MealController extends Controller
     }
 
     
-    public function edit($id)
+    public function edit(Meal $meal)
     {
-        //
+        $meal = Meal::find($meal->id);
+        return view('admin.dashboard.edit.edit_meal', ['meal' => $meal]);
     }
 
    
-    public function update(Request $request, $id)
+    public function update(Request $request, Meal $meal)
     {
-        //
+         $request->validate([
+            'type' => 'required',
+            'availablity_time' => 'required',
+            
+          ]);
+          Meal::find($meal->id)->update($request->all());
+          return redirect()->route('meal.index');
     }
 
-    public function destroy($id)
+    public function destroy(Meal $meal)
     {
-        //
+        Meal::find($meal->id)->delete();
+        return redirect()->route('meal.index');
     }
 }

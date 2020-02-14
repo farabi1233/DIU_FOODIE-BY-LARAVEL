@@ -63,6 +63,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         Category::find($category->id)->delete();
-        return redirect()->route('category.index')->with('success','Post Has Deleted Successfully');
+        return redirect()->route('category.index');
     }
 }

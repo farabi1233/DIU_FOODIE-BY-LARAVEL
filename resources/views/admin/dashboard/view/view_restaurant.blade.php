@@ -42,7 +42,7 @@
                 </div>
  
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-9">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">LIST Restaurant</h3>
@@ -76,21 +76,25 @@
                                             <td>{{ $restaurant->name}}</td>
                                             <td>{{ $restaurant->address}}</td>
                                             <td>
-                                                <a class="btn btn-primary btn-sm" href="#">
-                                                    <i class="fas fa-folder">
-                                                    </i>
-                                                    View
-                                                </a>
-                                            <a class="btn btn-info btn-sm" href="#">
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger btn-sm" href="#">
+                                            <a class="btn btn-primary " href="{{ route('restaurant.show', $restaurant->id) }}">  
+                                                    View</a>
+
+
+                                                <a class="btn btn-success " href="{{ route('restaurant.edit', $restaurant->id) }}">  
+                                                    Edit</a>
+                                                
+
+                                                <form action="{{ route('restaurant.destroy', $restaurant->id) }}" method="POST" style="display: inline-block;">
+                                                @csrf
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button type="submit" class="btn btn-outline-danger"onclick="return confirm('Are you sure want to delete this Restaurant?');"><i class="glyphicon glyphicon-trash"></i>
                                                 <i class="fas fa-trash">
                                                 </i>
                                                 Delete
-                                            </a>
+        
+    
+                                        </button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach

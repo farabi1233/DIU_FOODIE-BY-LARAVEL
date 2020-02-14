@@ -44,19 +44,30 @@ class RestaurantController extends Controller
     }
 
    
-    public function edit($id)
+    public function edit(Restaurant $restaurant)
     {
-        //
+        $restaurant = Restaurant::find($restaurant->id);
+        return view('admin.dashboard.edit.edit_restaurant', ['restaurant' => $restaurant]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request,Restaurant $restaurant)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            
+          ]);
+          Restaurant::find($restaurant->id)->update($request->all());
+          return redirect()->route('restaurant.index');
     }
 
    
-    public function destroy($id)
+    public function destroy(Restaurant $restaurant)
     {
-        //
-    }
+        Restaurant::find($restaurant->id)->delete();
+        return redirect()->route('restaurant.index');
+ 
+   }
+
 }
+
