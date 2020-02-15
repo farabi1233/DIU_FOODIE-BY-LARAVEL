@@ -9,6 +9,7 @@ use App\Category;
 use App\Restaurant;
 use App\Meal;
 
+
 class FoodController extends Controller
 {
     
@@ -34,19 +35,8 @@ class FoodController extends Controller
     
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'name' => 'required',
-            'price' => 'required',
-            
-            'category_id' => 'required',
-            'restaurant_id' => 'required',
-            'meal_id' => 'required',
-        ]);
-        
-
-        Food::create($request->all());
+        $food = Food::create($this->validateRequest());
+        $this->storeImage($food);
         return redirect()->route('food.create')
             ->with('success', 'Blog created successfully.');
     }
@@ -72,5 +62,34 @@ class FoodController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function validateRequest()
+    {
+        return tap(request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'category_id' => 'required',
+            'restaurant_id' => 'required',
+            'meal_id' => 'required',
+        ]), function () {
+            if (request()->hasFile('image')) {
+                request()->validate([
+                    'image' => 'required|image|max:5000'
+                ]);
+            }
+        });
+    }
+
+    public function storeImage($food)
+    {
+
+        if (request()->has('image')) {
+            $food->update([
+                'image' => request()->image->store('uploads', 'public'),
+            ]);
+        }
     }
 }
