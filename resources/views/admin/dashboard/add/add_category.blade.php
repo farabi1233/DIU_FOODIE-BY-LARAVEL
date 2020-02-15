@@ -48,7 +48,8 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/dashboard">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Add_categories</li>
                             </ol>
                         </div>
                     </div><!-- /.row -->

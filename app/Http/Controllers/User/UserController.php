@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('Public.index');
+        return view('Public.single_blog');
     }
 
     /**
