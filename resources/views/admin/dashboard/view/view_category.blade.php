@@ -69,10 +69,11 @@
                                             <th>Category_name</th>
                                             <th>Action</th>
                                         </tr>
+                                        <?php $id = 1; ?>
                                         @foreach($categories as $category)
                                         <tr>
-                                            <td>{{ $category->id}}</td>
-                                            <td>{{ $category->name}}</td>
+                                            <td>{{ $id}}</td>
+                                            <td>{{ ucfirst($category->name)}}</td>
                                             <td>
                                             <a class="btn btn-primary " href="{{ route('category.show', $category->id) }}">  
                                                     View</a>
@@ -108,6 +109,7 @@
 
                                             </td>
                                         </tr>
+                                        <?php $id++ ?>
                                         @endforeach
                                        
 

@@ -15,14 +15,8 @@ class MealController extends Controller
      */
     public function index()
     {
-        $data = [
- 
-            'meals' => Meal::all()
-        ];
-        return view('admin.dashboard.view.view_meal')->with($data);
-
-
-        $meals = Meal::orderBy('id','DESC')->paginate(5);
+        
+        $meals = Meal::orderBy('type')->get();
         return view('admin.dashboard.view.view_meal', ['meals' => $meals]);
     }
 

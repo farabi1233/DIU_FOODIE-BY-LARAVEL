@@ -70,11 +70,12 @@
                                         <th>Restaurant_Location</th>
                                         <th>Action</th>
                                     </tr>
+                                    <?php $id = 1; ?>
                                         @foreach($restaurants as $restaurant)
                                         <tr>
-                                            <td>{{ $restaurant->id}}</td>
-                                            <td>{{ $restaurant->name}}</td>
-                                            <td>{{ $restaurant->address}}</td>
+                                            <td>{{ $id}}</td>
+                                            <td>{{ ucfirst($restaurant->name)}}</td>
+                                            <td>{{ ucfirst($restaurant->address)}}</td>
                                             <td>
                                             <a class="btn btn-primary " href="{{ route('restaurant.show', $restaurant->id) }}">  
                                                     View</a>
@@ -97,6 +98,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        <?php $id++ ?>
                                         @endforeach
  
  

@@ -10,11 +10,10 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-        $data = [
- 
-            'restaurants' => Restaurant::all()
-        ];
-        return view('admin.dashboard.view.view_restaurant')->with($data);
+       
+
+        $restaurants = Restaurant::orderBy('name')->get();
+        return view('admin.dashboard.view.view_restaurant', ['restaurants' => $restaurants]);
     }
 
    

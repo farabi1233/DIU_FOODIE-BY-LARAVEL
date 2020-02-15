@@ -76,7 +76,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Restaurant Name</label>
-                            <input class="form-control" name="name" id="name" type="text" value="{{ $restaurant->name }}"  >
+                            <input class="form-control" name="name" id="name" type="text" value="{{ ucfirst($restaurant->name) }}"  >
                             <p class="help-block text-danger"></p>
                             
                         </div>
@@ -84,7 +84,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Address</label>
-                            <input class="form-control" name="address" id="address" type="text" value="{{ $restaurant->address }}"  >
+                            <input class="form-control" name="address" id="address" type="text" value="{{ ucfirst($restaurant->address )}}"  >
                             <p class="help-block text-danger"></p>
                             
                         </div>

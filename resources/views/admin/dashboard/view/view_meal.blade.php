@@ -64,17 +64,21 @@
                                         
                                     </thead>
                                     <tbody>
+                                    <?php $id = 1; ?>
+
                                         <tr>
                                         <th>Meal_Id</th>
                                         <th>Meal_Name</th>
                                         <th>Availability Time</th>
                                         <th>Action</th>
+                                        
                                     </tr>
+                                    
                                         @foreach($meals as $meal)
                                         <tr>
-                                            <td>{{ $meal->id}}</td>
-                                            <td>{{ $meal->type}}</td>
-                                            <td>{{ $meal->availablity_time}}</td>
+                                            <td>{{ $id}}</td>
+                                            <td>{{ucfirst( $meal->type)}}</td>
+                                            <td>{{ ucfirst($meal->availablity_time)}}</td>
                                             <td>
                                             <a class="btn btn-primary " href="{{ route('meal.show', $meal->id) }}">  
                                                     View</a>
@@ -98,6 +102,7 @@
 
                                             </td>
                                         </tr>
+                                        <?php $id++ ?>
                                         @endforeach
  
  

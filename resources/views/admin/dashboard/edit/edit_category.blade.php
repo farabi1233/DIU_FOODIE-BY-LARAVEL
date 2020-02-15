@@ -76,7 +76,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Category Name</label>
-                            <input class="form-control" name="name" id="name" type="text" value="{{ $category->name }}"  >
+                            <input class="form-control" name="name" id="name" type="text" value="{{ ucfirst($category->name) }}"  >
                             <p class="help-block text-danger"></p>
                             
                         </div>
