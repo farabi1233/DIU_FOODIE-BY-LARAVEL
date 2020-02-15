@@ -14,10 +14,10 @@ class FoodController extends Controller
     
     public function index()
     {
-        $data = [
- 
-            'foods' => Food::all()
-        ];
+        $data['foods'] =  Food::orderBy('id')->get();
+        $data['categories'] =  Category::orderBy('id')->get();
+        $data['meals'] =  Meal::orderBy('id')->get();
+        $data['restaurants'] =  Restaurant::orderBy('id')->get();
         return view('admin.dashboard.view.view_food')->with($data);
     }
 

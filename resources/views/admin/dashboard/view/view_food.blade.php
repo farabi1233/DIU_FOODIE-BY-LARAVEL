@@ -87,9 +87,11 @@
                                             <td>{{ $food->price}}</td>
                                             <td>{{ $food->image}}</td>
                                             <td>{{ $food->rating}}</td>
-                                            <td>{{ $food->category_id}}</td>
-                                            <td>{{ $food->restaurant_id}}</td>
-                                            <td>{{ $food->meal_id}}</td>
+                                            <td>{{ $food->category->name}}</td>
+                                            <td>{{ $food->restaurant->name}}</td>
+                                            <td>{{ $food->meal->type}}</td>
+
+                                           
 
                                             <td>
                                                 <a class="btn btn-primary btn-sm" href="#">

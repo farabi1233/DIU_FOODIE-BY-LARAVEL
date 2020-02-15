@@ -54,14 +54,17 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
-
-                  <p>New Orders</p>
+                <?php $food_count = 0; ?>
+                   @foreach($foods as $food)
+                   <?php ++$food_count ?>
+                   @endforeach
+                  <h3>{{$food_count}}</h3>
+                  <p>Number of Food</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('food.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -69,14 +72,18 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <?php $reataruant_count = 0; ?>
+                   @foreach($restaurants as $restaurant)
+                   <?php ++$reataruant_count ?>
+                   @endforeach
+                  <h3>{{$reataruant_count}}</h3>
 
-                  <p>Bounce Rate</p>
+                  <p>Number Of Restaurant</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('restaurant.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -84,14 +91,18 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>44</h3>
+                  <?php $category_count = 0; ?>
+                   @foreach($categories  as $catagory)
+                   <?php ++$category_count ?>
+                   @endforeach
+                  <h3>{{$category_count}}</h3>
 
-                  <p>User Registrations</p>
+                  <p>Number Of Food Category</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('category.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -112,6 +123,320 @@
             <!-- ./col -->
           </div>
           <!-- /.row -->
+
+
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                <?php $food_count = 0; ?>
+                   @foreach($foods as $food)
+                   <?php ++$food_count ?>
+                   @endforeach
+                  <h3>{{$food_count}}</h3>
+                  <p>Number of Food</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="{{route('food.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                <?php $reataruant_count = 0; ?>
+                   @foreach($restaurants as $restaurant)
+                   <?php ++$reataruant_count ?>
+                   @endforeach
+                  <h3>{{$reataruant_count}}</h3>
+
+                  <p>Number Of Restaurant</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{{route('restaurant.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <?php $category_count = 0; ?>
+                   @foreach($categories  as $catagory)
+                   <?php ++$category_count ?>
+                   @endforeach
+                  <h3>{{$category_count}}</h3>
+
+                  <p>Number Of Food Category</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="{{route('category.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>65</h3>
+
+                  <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+          <!-- ./row -->
+
+
+         <!-- ./row -->
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                <?php $food_count = 0; ?>
+                   @foreach($foods as $food)
+                   <?php ++$food_count ?>
+                   @endforeach
+                  <h3>{{$food_count}}</h3>
+                  <p>Number of Food</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="{{route('food.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                <?php $reataruant_count = 0; ?>
+                   @foreach($restaurants as $restaurant)
+                   <?php ++$reataruant_count ?>
+                   @endforeach
+                  <h3>{{$reataruant_count}}</h3>
+
+                  <p>Number Of Restaurant</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{{route('restaurant.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <?php $category_count = 0; ?>
+                   @foreach($categories  as $catagory)
+                   <?php ++$category_count ?>
+                   @endforeach
+                  <h3>{{$category_count}}</h3>
+
+                  <p>Number Of Food Category</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="{{route('category.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>65</h3>
+
+                  <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+
+           <!-- ./row -->
+
+
+
+
+           <!-- ./row -->
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                <?php $food_count = 0; ?>
+                   @foreach($foods as $food)
+                   <?php ++$food_count ?>
+                   @endforeach
+                  <h3>{{$food_count}}</h3>
+                  <p>Number of Food</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="{{route('food.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                <?php $reataruant_count = 0; ?>
+                   @foreach($restaurants as $restaurant)
+                   <?php ++$reataruant_count ?>
+                   @endforeach
+                  <h3>{{$reataruant_count}}</h3>
+
+                  <p>Number Of Restaurant</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{{route('restaurant.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <?php $category_count = 0; ?>
+                   @foreach($categories  as $catagory)
+                   <?php ++$category_count ?>
+                   @endforeach
+                  <h3>{{$category_count}}</h3>
+
+                  <p>Number Of Food Category</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="{{route('category.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>65</h3>
+
+                  <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+
+           <!-- ./row -->
+
+
+
+           <!-- ./row -->
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                <?php $food_count = 0; ?>
+                   @foreach($foods as $food)
+                   <?php ++$food_count ?>
+                   @endforeach
+                  <h3>{{$food_count}}</h3>
+                  <p>Number of Food</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="{{route('food.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                <?php $reataruant_count = 0; ?>
+                   @foreach($restaurants as $restaurant)
+                   <?php ++$reataruant_count ?>
+                   @endforeach
+                  <h3>{{$reataruant_count}}</h3>
+
+                  <p>Number Of Restaurant</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{{route('restaurant.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <?php $category_count = 0; ?>
+                   @foreach($categories  as $catagory)
+                   <?php ++$category_count ?>
+                   @endforeach
+                  <h3>{{$category_count}}</h3>
+
+                  <p>Number Of Food Category</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="{{route('category.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>65</h3>
+
+                  <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+
+           <!-- ./row -->
+           
 
 
 
